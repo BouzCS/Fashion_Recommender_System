@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title>Women's SHOP</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	{% load static %}
+	<link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}"/>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200&family=The+Nautigal:wght@700&display=swap" rel="stylesheet"> 
+	<style>
+		nav{
+			font-family: 'The Nautigal', cursive;
+			background-color:#FCA3B7;
+		}
+		body{
+			background-color: #ffe6f2  ;
+			font-family: 'Roboto Slab', serif;
+		}
+		.img-fluid{
+			width: 300px;
+			height: 300px;
+		}
+
+	</style>
+
+	<script type="text/javascript">
+		var user = '{{request.user}}'
+
+		function getToken(name) {
+		    var cookieValue = null;
+		    if (document.cookie && document.cookie !== '') {
+		        var cookies = document.cookie.split(';');
+		        for (var i = 0; i < cookies.length; i++) {
+		            var cookie = cookies[i].trim();
+		            // Does this cookie string begin with the name we want?
+		            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+		                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+		                break;
+		            }
+		        }
+		    }
+		    return cookieValue;
+		}
+		var csrftoken = getToken('csrftoken')
+
+		function getCookie(name) {
+		    // Split cookie string and get all individual name=value pairs in an array
+		    var cookieArr = document.cookie.split(";");
+
+		    // Loop through the array elements
+		    for(var i = 0; i < cookieArr.length; i++) {
+		        var cookiePair = cookieArr[i].split("=");
+
+		        /* Removing whitespace at the beginning of the cookie name
+		        and compare it with the given string */
+		        if(name == cookiePair[0].trim()) {
+		            // Decode the cookie value and return
+		            return decodeURIComponent(cookiePair[1]);
+		        }
+		    }
+
+		    // Return null if not found
+		    return null;
+		}
+		var cart = JSON.parse(getCookie('cart'))
+
+		if (cart == undefined){
+			cart = {}
+			console.log('Cart Created!', cart)
+			document.cookie ='cart=' + JSON.stringify(cart) + ";domain=;path=/"
+		}
+		console.log('Cart:', cart)
+
+
+	
+	</script>
+
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #FCA3B7">
+
+			<a href="{% url 'store' %}" style="margin-left: 60px;">
+			<img  id="logo-icon" src="{% static 'images/Fashion-shop-logo-design-on-transparent-background-PNG-removebg-preview.png' %}" width="70px">
+		</a>
+		  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+			  <li class="nav-item">
+				<a class="nav-link" href="{% url 'store' %}">
+					<h3 style="font-size: 40px;margin-left: 15px;">Women's shop</h3><span class="sr-only"></span></a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="{% url 'cart' %}"><h3 style="font-size: 40px;margin-left: 15px;">Cart</h3></a>
+			  </li>
+			  <li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					<h2 style="font-size: 40px;margin-left: 15px;">Other</h2>
+				</a>
+				<ul class="dropdown-menu" style="font-size: 25px;margin-left: 15px;background-color: #ffe4e1;" aria-labelledby="navbarDropdown">
+				  <li><a class="dropdown-item" href="#">Sales</a></li>
+				  <li><a class="dropdown-item" href="#">Offers</a></li>
+				</ul>
+			  </li>
+			</ul>
+			<div class="form-inline my-2 my-lg-2" id="navbarSupportedContent">
+				<a href="#"class="btn btn-info" style="font-size: 20px;background-color: #f88379;border-color: #f88379;">Login</a>
+				
+				<a href="{% url 'cart' %}" style="margin-left: 20px;">
+				   <img  id="cart-icon" src="{% static 'images/cart.png' %}">
+			   	</a>
+			   	<p id="cart-total" class="form-inline" style="margin-left: 90px;background-color: #f88379;border-color: #f88379;">{{cartItems}}</p>
+   
+		   </div>
+		  </div>
+		</div>
+	  </nav>
+
+     <div class="container">
+            <br>
+            {% block content %}
+
+
+            {% endblock content %}
+         </div>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+	<script type="text/javascript" src="{% static 'js/cart.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+	<div class="row">
+		{% for product in products %}
+		<div class="col-lg-4 ">
+			<img class="img-fluid rounded mx-auto d-block" src="{{product.imageURL}}">
+			<br>
+			<div class="box-element product" style="background-color: #FDB9C8;">
+				<h6><strong>{{product.name}}</strong></h6>
+				<hr>
+
+				<button data-product="{{product.id}}" style="font-weight: bold;" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+				
+				<a class="btn btn-outline-success" style="font-weight: bold;" href="{{product.id}}/view/">View</a>
+				<h4 style="display: inline-block; float:right;"><strong>${{product.price}}</strong></h4>
+
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+<br>
+<div>
+	<input id="moreButton" type="button" class="btn btn-info btn-block" value="See More ..." onclick="showMore()">
+</div>
+
+{% endblock content %}

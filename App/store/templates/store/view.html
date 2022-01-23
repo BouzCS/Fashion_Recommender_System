@@ -1,0 +1,47 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+
+{% for product in products %}
+
+    <div class="col-lg-10 ">
+        <img class="img-fluid rounded mx-auto d-block" src="{{product.imageURL}}">
+        <br>
+        <div class="box-element product">
+            <h6><strong>{{product.name}}</strong></h6>
+            <hr>
+
+            <button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+
+            <a class="btn btn-outline-success" href="#">View</a>
+            <h4 style="display: inline-block; float: right"><strong>${{product.price}}</strong></h4>
+
+        </div>
+    </div>
+{% endfor %}
+<br>
+<h1> Products related to the item that you choosed: </h1>
+<div class="row">
+    {% for pro in similars %}
+        <div class="col-lg-4 ">
+            <img class="img-fluid rounded mx-auto d-block" src="{{pro.imageURL}}">
+            <br>
+            <div class="box-element product">
+                <h6><strong>{{pro.name}}</strong></h6>
+                <hr>
+
+                <button data-product="{{pro.id}}" style="font-weight: bold;" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+
+                <a class="btn btn-outline-success"style="font-weight: bold;"  href="/{{pro.id}}/view/">View</a>
+                <h4 style="display: inline-block; float: right"><strong>${{pro.price}}</strong></h4>
+
+            </div>
+        </div>
+    {% endfor %}
+</div>
+<br>
+<div>
+    <input id="moreButton" type="button" class="btn btn-info btn-block" value="See More ..." onclick="showMore()">
+</div>
+
+{% endblock content %}
