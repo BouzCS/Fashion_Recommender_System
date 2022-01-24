@@ -4,9 +4,10 @@
 
 Personalized product recommendations are the alternative way of navigating through the online shop. More people find products they need. Even if they didn’t think of them. The project is a Website application for fashion recommendation using machine learning with a built-in a recommendation engine which suggests similar products to the given product.
 
-# BRIEF ON RECOMMENDATION SYSTEMS
+# :bulb: RECOMMENDATION SYSTEMS
 
 ***
+
 Recommender systems are one of the most successful and widespread applications of machine learning technologies in business. Recommendation systems help to increase the business revenue and help customers to buy the most suitable product for them.
 Now, we’ll look towards different types of filtering used by recommendation engines.
 
@@ -28,9 +29,9 @@ Two types of collaborative filtering techniques are used:
 </p>
 
 
-Note : In the project we will use the approach of Item-Item Collaborative filtering 
+Note : In the project we will use the approach of Item-Item Collaborative filtering :biohazard:
 
-# Problem Statement
+# :construction: Problem Statement
 
 ***
 
@@ -64,14 +65,16 @@ We are going to use a total of `Four approaches` for recommending the apparel as
 4.k nearest neighbors (KNN)
 
 ```
-# DATASETS
+# :open_file_folder: DATASETS
 
 ***
 
 
 ### [Dataset link](https://www.kaggle.com/ajaysh/women-apparel-recommendation-engine-amazoncom#tops_fashion.json)
 
-# Setup and Configuration
+
+
+# :computer::hammer_and_wrench: Setup and Configuration
 
 ***
 
@@ -95,7 +98,7 @@ To run this app, you will need to follow these 3 steps:
 
 
 #### 2. Install Python and Pipenv
-  - [Python3](https://www.python.org/downloads/)
+  - [Python3](https://www.python.org/downloads/) :snake:
   
 
   - [Pipenv](https://pipenv-es.readthedocs.io/es/stable/)
@@ -132,7 +135,7 @@ To run this app, you will need to follow these 3 steps:
   
   # Happy Testing 🤗
   ```
-# Screenshots of the website
+# :camera_flash: Screenshots of the website
 
 ***
 
@@ -161,16 +164,19 @@ Similar Product
 ![Similar Product](https://github.com/BouzCS/Fashion_Recommender_System/blob/main/Images/Product%203.jpeg)
 
 
-## Status
+## :hourglass_flowing_sand: Status
 Project is: _unfinished_
 
-## Futur Features
+
+## :date: Future Features
 
 * Adding a log in _inteface_
 * Implement KNN model on the website
 * Update UI/UX
 
-## Technologies
+
+## :abacus: Technologies
+
 * Python
 * Javascript
 * Jquery 
@@ -178,7 +184,10 @@ Project is: _unfinished_
 * HTML5
 * CSS3 
 * Bootstrap 5
+* SQLITE3
 
-# CREDITS
+# :pushpin: CREDITS
+
+***
 
 [Brief on recommender systems](https://towardsdatascience.com/brief-on-recommender-systems-b86a1068a4dd)
