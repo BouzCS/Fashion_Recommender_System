@@ -22,14 +22,16 @@ Two types of collaborative filtering techniques are used:
    ##### [User-User collaborative filtering](https://towardsdatascience.com/brief-on-recommender-systems-b86a1068a4dd)
    ##### [Item-Item collaborative filtering](https://towardsdatascience.com/brief-on-recommender-systems-b86a1068a4dd)
     
-    
- <p align="center">
-  <h4><strong> Summary : </strong></h4>
+
+
+<h4><center><strong> Summary : </strong></center></h4> 
+<p align="center">
   <img src="https://miro.medium.com/max/700/1*mz9tzP1LjPBhmiWXeHyQkQ.png" />
 </p>
 
 
-Note : In the project we will use the approach of Item-Item Collaborative filtering :biohazard:
+
+<strong>Note</strong> : In the project we will use the approach of Item-Item Collaborative filtering :biohazard:
 
 # :construction: Problem Statement
 
