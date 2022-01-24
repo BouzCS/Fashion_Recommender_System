@@ -190,5 +190,5 @@ Project is: _unfinished_
 
 ***
 
-[Brief on recommender systems](https://towardsdatascience.com/brief-on-recommender-systems-b86a1068a4dd)
+[Brief on recommender systems](https://towardsdatascience.com/brief-on-recommender-systems-b86a1068a4dd) <br>
 @Abhinav1004 
