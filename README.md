@@ -18,12 +18,12 @@ Now, we’ll look towards different types of filtering used by recommendation en
   
 Two types of collaborative filtering techniques are used:
 
-   ### [User-User collaborative filtering](https://towardsdatascience.com/brief-on-recommender-systems-b86a1068a4dd)
-   ### [Item-Item collaborative filtering](https://towardsdatascience.com/brief-on-recommender-systems-b86a1068a4dd)
+   ##### [User-User collaborative filtering](https://towardsdatascience.com/brief-on-recommender-systems-b86a1068a4dd)
+   ##### [Item-Item collaborative filtering](https://towardsdatascience.com/brief-on-recommender-systems-b86a1068a4dd)
     
     
  <p align="center">
-  <h5> Summary : </h5>
+  <h4><strong> Summary : </strong></h4>
   <img src="https://miro.medium.com/max/700/1*mz9tzP1LjPBhmiWXeHyQkQ.png" />
 </p>
 
@@ -167,7 +167,7 @@ Project is: _unfinished_
 ## Futur Features
 
 * Adding a log in _inteface_
-* Implement KNN model on site
+* Implement KNN model on the website
 * Update UI/UX
 
 ## Technologies
